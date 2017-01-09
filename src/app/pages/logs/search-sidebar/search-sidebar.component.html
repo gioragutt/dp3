@@ -1,0 +1,19 @@
+<div>
+  <label class="sr-only" for="processName">Process Name</label>
+  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+    <div class="input-group-addon">
+      <md-icon>search</md-icon>
+    </div>
+    <input type="text" [(ngModel)]="searchValue" class="form-control" id="processName" placeholder="Process Name">
+  </div>
+  <div class="process-list">
+    <md-list>
+      <md-list-item *ngFor="let item of items | listFilter:searchValue">
+        <button md-raised-button [color]="isSelected(item) ? 'primary' : ''"
+                class="process-name" (click)="changeSelected(item)">
+          {{item}}
+        </button>
+      </md-list-item>
+    </md-list>
+  </div>
+</div>

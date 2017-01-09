@@ -1,0 +1,15 @@
+<div class="container" [style.max-height]="containerHeight()" (window:resize)="resize($event.target.innerHeight)">
+  <div class="row">
+    <div class="col-2" color="primary">
+      <app-search-sidebar (selectedChanged)="selected=$event" [items]="items"></app-search-sidebar>
+    </div>
+    <div class="col-10">
+      <md-tab-group>
+        <md-tab [label]="selected">
+          <h1>{{selected}}</h1>
+          <p>...</p>
+        </md-tab>
+      </md-tab-group>
+    </div>
+  </div>
+</div>

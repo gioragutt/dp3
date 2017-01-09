@@ -1,0 +1,10 @@
+<div class="button-row">
+  <button md-raised-button
+          *ngFor="let tab of tabs" 
+          [color]="isActive(tab) ? 'accent' : ''"
+          [routerLink]="tab.routerLink"
+          class="tab">
+    <md-icon>{{tab.icon}}</md-icon>
+    {{tab.name}}
+  </button>
+</div>

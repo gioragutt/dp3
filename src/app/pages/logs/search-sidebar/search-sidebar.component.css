@@ -1,0 +1,7 @@
+.process-name {
+    width: 100%;
+}
+
+.process-list {
+    overflow-y: scroll;
+}
