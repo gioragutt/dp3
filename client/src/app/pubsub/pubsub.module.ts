@@ -6,6 +6,7 @@ import { PubsubService } from './pubsub.service';
   imports: [
     CommonModule
   ],
-  declarations: []
+  declarations: [],
+  providers: [PubsubService]
 })
 export class PubsubModule { }
