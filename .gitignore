@@ -6,6 +6,8 @@
 
 # dependencies
 /node_modules
+bin
+lib
 
 # IDEs and editors
 /.idea
@@ -16,7 +18,7 @@
 .settings/
 
 # IDE - VSCode
-.vscode/*
+**/.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
