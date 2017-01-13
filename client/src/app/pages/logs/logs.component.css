@@ -1,4 +1,4 @@
-.container {
+/*.container {
     width: 100%;
     min-height: 100%;
     overflow: hidden;
@@ -12,4 +12,34 @@
 
 .row > div {
     padding: 10px;
+}*/
+
+.row {
+    width: 100%;
+    margin: 0;
+}
+
+.row>.col* {
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    min-height: calc(100% - 64px);
+    max-height: calc(100% - 64px);
+}
+
+app-search-sidebar,
+.log-section {
+    overflow-y: auto;
+    display: block;
+    height: 100%;
+}
+
+.sidebar-container {
+    min-width: 300px;
+    /*max-width: 300px;*/
 }

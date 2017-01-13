@@ -14,6 +14,10 @@ import { appRoutes } from './app.routing';
 import 'hammerjs';
 import { SearchSidebarComponent } from './pages/logs/search-sidebar/search-sidebar.component';
 import { ListFilterPipe } from './pages/logs/search-sidebar/list-filter.pipe';
+import { LogsService } from './pages/logs/logs.service';
+import { LoggersTreeComponent } from './pages/logs/loggers-tree/loggers-tree.component';
+import { LoggersTreeNodeComponent } from './pages/logs/loggers-tree-node/loggers-tree-node.component';
+import { IterateObjectPipe } from './iterate-object.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,10 @@ import { ListFilterPipe } from './pages/logs/search-sidebar/list-filter.pipe';
     LogsComponent,
     IndexComponent,
     SearchSidebarComponent,
-    ListFilterPipe
+    ListFilterPipe,
+    LoggersTreeComponent,
+    LoggersTreeNodeComponent,
+    IterateObjectPipe,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +38,7 @@ import { ListFilterPipe } from './pages/logs/search-sidebar/list-filter.pipe';
     RouterModule.forRoot(appRoutes),
     MaterialModule.forRoot()
   ],
-  providers: [],
+  providers: [LogsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

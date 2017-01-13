@@ -1,15 +1,17 @@
-<div class="container" [style.max-height]="containerHeight()" (window:resize)="resize($event.target.innerHeight)">
-  <div class="row">
-    <div class="col-2" color="primary">
-      <app-search-sidebar (selectedChanged)="selected=$event" [items]="items"></app-search-sidebar>
+<div class="container">
+    <div class="row">
+        <div class="col-3" color="primary" class="sidebar-container">
+            <app-search-sidebar (selectedChanged)="selected=$event" [items]="items"></app-search-sidebar>
+        </div>
+        <div class="col log-section">
+            <md-tab-group>
+                <!--<md-tab label="Settings">
+                    <app-loggers-tree></app-loggers-tree>
+                </md-tab>-->
+                <md-tab label="Log" class="log-section">
+                    <app-loggers-tree [loggers]="loggers"></app-loggers-tree>
+                </md-tab>
+            </md-tab-group>
+        </div>
     </div>
-    <div class="col-10">
-      <md-tab-group>
-        <md-tab [label]="selected">
-          <h1>{{selected}}</h1>
-          <p>...</p>
-        </md-tab>
-      </md-tab-group>
-    </div>
-  </div>
 </div>

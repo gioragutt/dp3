@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProcessesList } from './mock_data';
+import { ProcessesList, LoggersData } from './mock_data';
+import { LogsService } from './logs.service';
+import { Loggers } from './logger';
 
 @Component({
   selector: 'app-logs',
@@ -7,17 +9,22 @@ import { ProcessesList } from './mock_data';
   styleUrls: ['./logs.component.css']
 })
 export class LogsComponent {
-
   items: string[] = ProcessesList;
   selected: string = '';
-  height: number;
+  loggers: Loggers = LoggersData;
 
-
-  containerHeight(): number {
-    return this.height <= 0 ? window.innerHeight : this.height;
+  constructor(private logsSerive: LogsService) {
+    this.initializeProcesses();
   }
 
-  resize(height: number) {
-    this.height = height;
+  initializeProcesses(): void {
+    this.logsSerive.getProcesses()
+      .subscribe(
+        processes => {
+          this.items = processes;
+          this.selected = this.items.length > 0 ? this.items[0] : '';
+        },
+        err => console.log('Error:', err)
+      );
   }
 }

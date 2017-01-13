@@ -1,7 +1,16 @@
 .process-name {
     width: 100%;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
 }
 
-.process-list {
-    overflow-y: scroll;
+md-grid-list::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
 }
+
+/*md-grid-list {
+    min-height: calc(100% - 24px);
+    max-height: calc(100% - 24px);
+}*/

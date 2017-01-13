@@ -1,0 +1,8 @@
+<div style="background: gray">
+    <button md-raised-button [color]="true ? 'primary' : ''" (click)="toggleTree()">
+            [{{logger.name}} - {{logger.level}}]
+    </button>
+    <div style="margin-left: 20px" [style.display]="showTree ? 'inherit' : 'none'">
+        <app-loggers-tree [loggers]="logger.children" *ngIf="logger.children"></app-loggers-tree>
+    </div>
+</div>
