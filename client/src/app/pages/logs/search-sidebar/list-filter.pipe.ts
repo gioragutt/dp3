@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ListFilterPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    if (args === undefined || <string>args === '') {
+    if (args === undefined || args === '') {
       return value;
     }
 
