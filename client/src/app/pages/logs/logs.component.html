@@ -6,8 +6,9 @@
         <div class="col log-section">
             <md-tab-group>
                 <md-tab label="Log" class="log-section">
+                    {{selected}} <button (click)="tree.expandAll()">Expand All</button> <button (click)="tree.collapseAll()">Collapse All</button>
                     <div style="margin-top: 1rem">
-                        <app-loggers-tree [loggers]="loggers"></app-loggers-tree>
+                        <app-loggers-tree #tree [loggers]="loggers"></app-loggers-tree>
                     </div>
                 </md-tab>
             </md-tab-group>
