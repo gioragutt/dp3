@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 
+import { PubsubModule } from './pubsub/pubsub.module';
 import { AppComponent } from './app.component';
 import { NavigationTabsComponent } from './navigation-tabs/navigation-tabs.component';
 import { LogsComponent } from './pages/logs/logs.component';
@@ -36,7 +37,8 @@ import { IterateObjectPipe } from './iterate-object.pipe';
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    PubsubModule
   ],
   providers: [LogsService],
   bootstrap: [AppComponent]
