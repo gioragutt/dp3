@@ -3,45 +3,45 @@ import { Loggers } from './logger';
 export const LoggersData: Loggers = {
     'BUS': {
         name: 'BUS',
-        level: 'info'
+        level: 'INFO'
     },
     'DBM-CENTRAL': {
         name: 'DBM-CENTRAL',
-        level: 'info',
+        level: 'INFO',
         children: {
             'HANDLER' : {
                 name: 'HANDLER',
-                level: 'debug',
+                level: 'DEBUG',
                 children: {
                     'NESTED': {
                         name: 'NESTED',
-                        level: 'info'
+                        level: 'INFO'
                     }
                 }
             },
             'HANDLER-2': {
                 name: 'HANDLER-2',
-                level: 'error'
+                level: 'ERROR'
             }
         }
     },
     'GOLDEN-OAK': {
         name: 'GOLDEN-OAK',
-        level: 'error',
+        level: 'ERROR',
         children: {
             'HANDLER' : {
                 name: 'HANDLER',
-                level: 'debug',
+                level: 'DEBUG',
                 children: {
                     'NESTED': {
                         name: 'NESTED',
-                        level: 'info'
+                        level: 'INFO'
                     }
                 }
             },
             'HANDLER-2-WITH-A-TYPICALLY-LONG-NAME-FFS-INTERFACE-Y-U-DO-DIS': {
                 name: 'HANDLER-2-WITH-A-TYPICALLY-LONG-NAME-FFS-INTERFACE-Y-U-DO-DIS',
-                level: 'error'
+                level: 'ERROR'
             }
         }
     }
@@ -61,4 +61,4 @@ export const ProcessesList: string[] = [
 //         list.push('' + i);
 //     }
 //     return list;
-// })();
+// })();    

@@ -1,4 +1,4 @@
-export type LogLevel = 'error' | 'info' | 'debug';
+export type LogLevel = 'ERROR' | 'INFO' | 'DEBUG';
 
 export type Loggers = { [string: string]: Logger };
 

@@ -1,8 +1,21 @@
-<div style="background: gray">
-    <button md-raised-button [color]="true ? 'primary' : ''" (click)="toggleTree()">
-            [{{logger.name}} - {{logger.level}}]
-    </button>
-    <div style="margin-left: 20px" [style.display]="showTree ? 'inherit' : 'none'">
+<div>
+    <div class="row" style="margin: 0">
+        <div class="col">
+            <button md-button [color]="true ? 'primary' : ''" (click)="toggleTree()" style="width: 100%" [disabled]="!logger.children">
+                <md-icon [style.color]="logger.children ? 'black' : 'transparent'">{{mdIconText()}}</md-icon>
+                <span class="pull-left">{{logger.name}}</span>
+            </button>
+        </div>
+        <div class="pull-0" style="display: table">
+            <md-chip-list #selectedLevel class="pull-12" style="display: table-cell">
+                <md-chip *ngFor="let level of availableLevels()" class="level-chip" [class.active-chip]="isActive(level)" [class.non-active-chip]="!isActive(level)" (click)="changeLevel(level)">
+                    <strong>{{level}}</strong>
+                </md-chip>
+            </md-chip-list>
+        </div>
+    </div>
+    <hr>
+    <div class="subloggers" [style.display]="showTree ? 'inherit' : 'none'">
         <app-loggers-tree [loggers]="logger.children" *ngIf="logger.children"></app-loggers-tree>
     </div>
 </div>

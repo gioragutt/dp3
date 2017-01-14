@@ -1,0 +1,31 @@
+.active-chip {
+    background: #2196f3;
+}
+
+[md-button][disabled] {
+    color: #2196f3;
+}
+
+.non-active-chip {
+    background: #ffeb3b;
+    color: black;
+}
+
+.level-chip {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.subloggers {
+    margin-left: 40px;
+}
+
+hr {
+    margin: 0.5rem 0;
+}
+
+[md-button] {
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px;
+}
