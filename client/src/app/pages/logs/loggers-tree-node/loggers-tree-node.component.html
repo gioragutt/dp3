@@ -3,7 +3,7 @@
         <div class="col">
             <button md-button [color]="true ? 'primary' : ''" (click)="toggleTree()" style="width: 100%" [disabled]="!logger.children">
                 <md-icon [style.color]="logger.children ? 'black' : 'transparent'">{{mdIconText()}}</md-icon>
-                <span class="pull-left">{{logger.name}}</span>
+                <span class="pull-left">{{logger.name | shortenName:useShortName }}</span>
             </button>
         </div>
         <div class="pull-0" style="display: table">
@@ -16,6 +16,6 @@
     </div>
     <hr>
     <div class="subloggers" [style.display]="showTree ? 'inherit' : 'none'">
-        <app-loggers-tree [loggers]="logger.children" *ngIf="logger.children"></app-loggers-tree>
+        <app-loggers-tree [loggers]="logger.children" [useShortNames]="useShortName" *ngIf="logger.children"></app-loggers-tree>
     </div>
 </div>

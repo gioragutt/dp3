@@ -13,6 +13,7 @@ const AvailableLevels: string[] = ['ERROR', 'INFO', 'DEBUG'];
 })
 export class LoggersTreeNodeComponent implements OnInit, OnDestroy {
   @Input() logger: Logger;
+  @Input() useShortName: boolean;
   showTree: boolean;
 
   treeCommandSubscription: Subscription;
@@ -25,11 +26,14 @@ export class LoggersTreeNodeComponent implements OnInit, OnDestroy {
   }
 
   handleTreeCommandMessage(command: LoggersTreeCommand) {
-    if (command === 'expand') {
-      this.showTree = true;
-    }
-    else if (command === 'collapse') {
-      this.showTree = false;
+    switch (command) {
+      case LoggersTreeCommand.Collapse:
+        this.showTree = false;
+        break;
+      case LoggersTreeCommand.Expand:
+        this.showTree = true;
+      default:
+        break;
     }
   }
 

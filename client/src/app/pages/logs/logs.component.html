@@ -6,9 +6,14 @@
         <div class="col log-section">
             <md-tab-group>
                 <md-tab label="Log" class="log-section">
-                    {{selected}} <button (click)="tree.expandAll()">Expand All</button> <button (click)="tree.collapseAll()">Collapse All</button>
+                    {{selected}}
+                    <button (click)="tree.expandAll()">Expand All</button>
+                    <button (click)="tree.collapseAll()">Collapse All</button>
+                    <md-slide-toggle class="example-margin" color="primary" [(ngModel)]="useShortNames">
+                        Short Names
+                    </md-slide-toggle>
                     <div style="margin-top: 1rem">
-                        <app-loggers-tree #tree [loggers]="loggers"></app-loggers-tree>
+                        <app-loggers-tree #tree [loggers]="loggers" [useShortNames]="useShortNames"></app-loggers-tree>
                     </div>
                 </md-tab>
             </md-tab-group>

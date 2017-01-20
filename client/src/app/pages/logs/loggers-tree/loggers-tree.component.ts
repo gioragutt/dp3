@@ -2,10 +2,13 @@ import { Component, Input } from '@angular/core';
 import { Loggers } from '../logger';
 import { PubsubService } from '../../../pubsub/pubsub.service';
 
-export type LoggersTreeCommand  = 'expand' | 'collapse';
+export enum LoggersTreeCommand  {
+  Expand, Collapse
+};
+
 export class LoggersTreeCommandMessage {
   command: LoggersTreeCommand;
-}
+};
 
 @Component({
   selector: 'app-loggers-tree',
@@ -14,6 +17,8 @@ export class LoggersTreeCommandMessage {
 })
 export class LoggersTreeComponent {
   @Input() loggers: Loggers;
+  @Input() useShortNames: boolean;
+  
 
   constructor(private pubsub: PubsubService) { }
 
@@ -22,11 +27,11 @@ export class LoggersTreeComponent {
   }
 
   collapseAll() {
-    this.sendCommand('collapse');
+    this.sendCommand(LoggersTreeCommand.Collapse);
   }
 
   expandAll() {
-    this.sendCommand('expand');
+    this.sendCommand(LoggersTreeCommand.Expand);
   }
 
 }

@@ -19,6 +19,8 @@ import { LogsService } from './pages/logs/logs.service';
 import { LoggersTreeComponent } from './pages/logs/loggers-tree/loggers-tree.component';
 import { LoggersTreeNodeComponent } from './pages/logs/loggers-tree-node/loggers-tree-node.component';
 import { IterateObjectPipe } from './iterate-object.pipe';
+import { LoggersTreeSearchPipe } from './pages/logs/loggers-tree-search.pipe';
+import { ShortenNamePipe } from './pages/logs/loggers-tree-node/shorten-name.pipe';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { IterateObjectPipe } from './iterate-object.pipe';
     LoggersTreeComponent,
     LoggersTreeNodeComponent,
     IterateObjectPipe,
+    LoggersTreeSearchPipe,
+    ShortenNamePipe,
   ],
   imports: [
     BrowserModule,

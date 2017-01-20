@@ -13,6 +13,7 @@ export class LogsComponent {
   items: string[] = ProcessesList;
   selected: string = '';
   loggers: Loggers = MockLoggers;
+  useShortNames: boolean;
 
   constructor(private logsSerive: LogsService) {
     this.initializeProcesses();
