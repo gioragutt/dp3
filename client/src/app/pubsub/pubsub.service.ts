@@ -13,7 +13,6 @@ export class PubsubService {
       this.channels.set(type, new Subject<T>());
     }
 
-    console.log('Subscribing to: ', type.toString());
     return this.channels.get(type).asObservable();
   }
 
