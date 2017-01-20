@@ -23,6 +23,19 @@
     padding: 0;
 }
 
+.control-bar {
+    margin-top: 5px;
+}
+
+.control-bar * {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.control-bar md-slide-toggle {
+    margin: 8px 5px;
+}
+
 .container {
     display: flex;
     height: 100%;

@@ -7,11 +7,13 @@
             <md-tab-group>
                 <md-tab label="Log" class="log-section">
                     {{selected}}
-                    <button (click)="tree.expandAll()">Expand All</button>
-                    <button (click)="tree.collapseAll()">Collapse All</button>
-                    <md-slide-toggle class="example-margin" color="primary" [(ngModel)]="useShortNames">
-                        Short Names
-                    </md-slide-toggle>
+                    <div style="display: flex" class="control-bar">
+                        <button md-raised-button color="primary" (click)="tree.expandAll()">Expand All</button>
+                        <button md-raised-button color="primary" (click)="tree.collapseAll()">Collapse All</button>
+                        <md-slide-toggle class="example-margin" color="primary" [(ngModel)]="useShortNames">
+                            Short Names
+                        </md-slide-toggle>
+                    </div>
                     <div style="margin-top: 1rem">
                         <app-loggers-tree #tree [loggers]="loggers" [useShortNames]="useShortNames"></app-loggers-tree>
                     </div>
